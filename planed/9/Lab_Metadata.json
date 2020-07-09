@@ -1,0 +1,20 @@
+{
+    "labName": "[구현] 서킷 브레이커 설정과 테스트",
+    "tool" : "ide",
+    "labTime" : 10,
+    "labScenario" : "...",
+    "checkPoints": [
+        {
+            "text": "주문후 화면에 주문 내역이 store 에서 표시됨",
+            "javascript": "seeRightOrderItemInStore.js"
+        },
+        {
+            "text": "주문후 CookList에 추가된 사항이 확인됨",
+            "javascript": "cookListHasOrderedItems.js"
+        }
+    ],
+    "hints": [{
+        "text": "",
+        "regExp": "port ..."
+    }]
+}

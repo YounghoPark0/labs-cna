@@ -1,0 +1,32 @@
+{
+    "labName": "[운영] 쿠버네티스 배포",
+    "tool" : "ide",
+    "labTime" : 10,
+    "labScenario" : "생성한 쿠버네티스 오브젝트들을 쿠버네티스 명령어를 통하여 배포",
+    "templateFile": "start-kuber-deploy.zip",
+    "checkPoints": [
+        {
+            "text": "Deployment 3개 배포 여부",
+            "testShell": "test Deployments"
+        },
+        {
+            "text": "Service 3개 배포 여부",
+            "testShell": "test Services"
+        },
+        {
+            "text": "Order 서비스 접속 성공",
+            "testShell": "test OrderServiceIsOn"
+        }
+    ],
+    "hints": [{
+        "text": "이미지명을 체크하세요",
+        "regExp": "ImageCrash..."
+    },
+    {
+        "text": "클러스터 사이즈를 증가시키세요 (스케일아웃)",
+        "regExp": "Pending"
+    },{
+        "text": "클러스터 노드의 용량을 증가시키세요 (스케일업)",
+        "regExp": "Evicted"
+    }]
+}

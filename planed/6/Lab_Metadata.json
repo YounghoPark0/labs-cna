@@ -1,0 +1,21 @@
+{
+    "labName": "[구현] Correlation 폴리시의 구현",
+    "tool" : "ide",
+    "labTime" : 10,
+    "labScenario" : "주문 서비스의 도메인 이벤트에 따른 상점서비스의 비즈니스를 구현하시오",
+    "templateFile": "fooddelivery_lab_before-store-policy.zip",
+    "checkPoints": [
+        {
+            "text": "주문후 화면에 주문 내역이 store 시스템 콘솔상에 표시됨",
+            "javascript": "seeRightOrderItemInStore.js"
+        },
+        {
+            "text": "주문후 CookList에 추가된 사항이 확인됨",
+            "javascript": "cookListHasOrderedItems.js"
+        }
+    ],
+    "hints": [{
+        "text": "",
+        "regExp": "port ..."
+    }]
+}

@@ -1,0 +1,35 @@
+{
+    "labName": "[이벤트스토밍] 도메인 이벤트의 도출",
+    "tool" : "event-storming",
+    "labTime" : 10,
+    "labScenario" : "다음 유저스토리에 포함된 도메인 이벤트들을 도출하시오",
+    "checkPoints": [
+        {
+            "text": "3개 이상의 이벤트 (오렌지색 스티커)를 도출했는가",
+            "javascript": "threeOrMoreEvents.js"
+        },
+        {
+            "text": "도메인에서 사용된 용어 (Ubiqutous Language)를 사용하였는가?",
+            "javascript": "oneOf(t.query('$.Event[*].name'), ['OrderPlaced', 'OrderCanceled', 'OrderNotified','FoodDelivered',''])"
+        },
+        {
+            "text": "과거분사형으로 도출되었는가",
+            "javascript": "isPostPoned.js"
+        }              
+    ],
+    "hints": [{
+        "text": "왼쪽 팔렛트에서 오렌지색 스티커를 끌어다 넣으세요",
+        "javascript": "result.forEach(item=>{if (item._type=='org.uengine.model.Event') return false}); return true"
+    },
+
+    {
+        "text": "일의 발생 순서대로 배치하였는가?",
+        "javascript": "true"
+    },
+    {
+        "text": "Pascal Case 로 작성되었는가? e.g. orderPlaced X, Order Placed X, OrderPlaced (O)",
+        "javascript": "true"
+    }
+
+    ]
+}

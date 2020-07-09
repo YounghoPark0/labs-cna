@@ -1,0 +1,29 @@
+{
+    "labName": "[구현] 마이크로서비스의 실행",
+    "tool" : "ide",
+    "labTime" : 10,
+    "labScenario" : "생성된 Cloud Native Application 서비스를 실행하시오 ",
+    "templateFile": "fooddelivery_lab.zip",
+    "checkPoints": [
+        {
+            "text": "포트별 마이크로서비스 실행(8081)",
+            "testShell": "test 8081"
+        },
+        {
+            "text": "포트별 마이크로서비스 실행(8082)",
+            "testShell": "test 8082"
+        },
+        {
+            "text": "포트별 마이크로서비스 실행(8083)",
+            "testShell": "test 8083"
+        },
+        {
+            "text": "주문 처리가 됨",
+            "regExp": "HTTP/1.1 201"
+        }
+    ],
+    "hints": [{
+        "text": "Port 넘버가 충돌 되었습니다. lsof -i:<portnumber> 로 체크후, 해당 프로세스를 kill (kill -9 <process id>) 합니다.",
+        "regExp": "port ..."
+    }]
+}

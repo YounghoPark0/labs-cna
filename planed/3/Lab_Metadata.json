@@ -1,0 +1,24 @@
+{
+    "labName": "[이벤트스토밍] 커맨드와 액터, 어그리게잇으로 내러티브한 모델 만들기",
+    "tool" : "event-storming",
+    "labTime" : 10,
+    "labScenario" : "Command와 Actor, Aggregate 를 부착하고 설정하시오",
+    "startArtifact": "start.json",   
+    "checkPoints": [
+        {
+            "text": "Command 부착",
+            "javascript": "containsAll(jp.query(v.modelForElements, '$.Command[*].name').map(v => v.toLowerCase()), ['cancel', 'order'])"
+        },
+        {
+            "text": "Actor 부착",
+            "javascript": "containsAll(jp.query(v.modelForElements, '$.Actor[*].name').map(v => v.toLowerCase()), ['customer', 'store owner'])"
+        },        
+        {
+            "text": "Aggregate로 묶기",
+            "javascript": "t.query('$.Command[@.name==\"order\"]'.aggregate')[0] == t.query('$.Command[@.name==\"cancel\"]'.aggregate')[0] == t.query('$.Event[@.name==\"OrderPlaced\"]'.aggregate')[0] == t.query('$.Event[@.name==\"OrderCanceled\"]'.aggregate')[0]"
+        }
+    ],
+    "hints": [{
+        "text": "Aggregate 은 단위 ACID Transaction 묶음으로 주어야 합니다."
+    }]
+}

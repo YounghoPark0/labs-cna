@@ -1,0 +1,21 @@
+{
+    "labName": "[운영] 도커라이징 & 이미지 Push",
+    "tool" : "ide",
+    "labTime" : 10,
+    "labScenario" : "구현된 마이크로서비스별 이미지를 생성하고, Docker Hub 이미지 저장소에 이를 Push한다.",
+    "templateFile": "fooddelivery_lab.zip",        
+    "checkPoints": [
+        {
+            "text": "도커 이미지 3개 생성 여부",
+            "testShell": "test DockerBuild"
+        },
+        {
+            "text": "도커 이미지 3개 푸시 여부",
+            "testShell": "test DockerPush"
+        }
+    ],
+    "hints": [{
+        "text": "",
+        "regExp": "port ..."
+    }]
+}

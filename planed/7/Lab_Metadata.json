@@ -1,0 +1,21 @@
+{
+    "labName": "[구현] 폴리시(이벤트리스너)의 구현",
+    "tool" : "ide",
+    "labTime" : 10,
+    "labScenario" : "상점서비스의 상태변화에 따라, 주문팀 해당 주문 건의 상태를 갱신 하시오",
+    "templateFile": "fooddelivery_lab.zip",        
+    "checkPoints": [
+        {
+            "text": "요리완료 상태변경이 정상적으로 Store에서 이루어 짐.",
+            "javascript": "seeRightOrderItemInStore.js"
+        },
+        {
+            "text": "Order 서비스의 상태값 또한 요리완료로 변경되어 조회됨.",
+            "javascript": "cookListHasOrderedItems.js"
+        }
+    ],
+    "hints": [{
+        "text": "",
+        "regExp": "port ..."
+    }]
+}

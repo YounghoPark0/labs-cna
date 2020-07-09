@@ -1,0 +1,38 @@
+{
+    "labName": "[이벤트스토밍] 폴리시 도출과 바운디드 컨텍스트의 분리",
+    "tool" : "event-storming",
+    "labTime" : 10,
+    "startArtifact": "start.json",
+    "labScenario" : "다음 시나리오에 대하여 Policy 를 부착하고 이름을 부여한 후, 해당하는 이벤트와 연결하시오",
+    "checkPoints": [
+        {
+            "text": "2개의 폴리시 (라일락 스티커)를 도출했는가",
+            "javascript": "twoPolicies.js"
+        },
+        {
+            "text": "적절한 Event 와 연결되었는가?",
+            "javascript": "connectedToEvents.js"
+        },        
+        {
+            "text": "order(주문시스템)과 store(상점)의 이름으로 된 Bounded Context 가 존재하는가",
+            "javascript": 
+            
+                "containsAll(jp.query(v.modelForElements, '$.BoundedContext[*].name'), ['order', 'store'])"
+        },
+        {
+            "text": "order(주문시스템)에서 OrderPlaced 가 발행되는가",
+            "javascript": 
+            
+                "jp.query(v.modelForElements, '$.Event[?(@.name==\"OrderPlaced\")].boundedContext.name')[0] == 'order'"
+        },
+        {
+            "text": "store(상점서비스)에서 'notify order' 가 수신되는가",
+            "javascript": 
+            
+                "jp.query(v.modelForElements, '$.Policy[?(@.name==\"notify order\")].boundedContext.name')[0] == 'store'"
+        }
+    ],
+    "hints": [{
+        "text": "왼쪽 팔렛트에서 라일락 스티커를 끌어다 넣으세요"
+    }]
+}

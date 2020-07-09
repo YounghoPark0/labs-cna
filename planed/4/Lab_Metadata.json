@@ -1,0 +1,24 @@
+{
+    "labName": "[이벤트스토밍-구현] 코드의 생성",
+    "tool" : "event-storming",
+    "labTime" : 10,
+    "startArtifact": "start.json",   
+    "labScenario" : "...",
+    "checkPoints": [
+        {
+            "text": "Event POJO Class 생성",
+            "javascript": "haveEventsPOJO.js"
+        },
+        {
+            "text": "Command-RestRepository 생성",
+            "javascript": "haveRestRepository.js"
+        },        
+        {
+            "text": "PolicyHandler 생성",
+            "javascript": "havePolicyHandlers.js"
+        }
+    ],
+    "hints": [{
+        "text": "Code 를 클릭하여 코드를 생성해봅니다. 생성되지 않은 코드는 모델을 수정해가면서 봐야합니다."
+    }]
+}

@@ -1,0 +1,24 @@
+{
+    "labName": "[운영] GCP 클라우드 및 인프라 셋업",
+    "tool" : "ide",
+    "labTime" : 15,
+    "labScenario" : "GCP 클라우드 셋업 및 서비스간 메시지 통신을 위한 카프카를 설치한다.",
+    "checkPoints": [
+        {
+            "text": "Google Cloud Platform에 프로젝트 정상 생성",
+            "testShell": ""
+        },
+        {
+            "text": "Google Cloud Platform에 쿠버네티스 정상 생성",
+            "testShell": ""
+        },
+        {
+            "text": "쿠버네티스에 카프카 정상 설치",
+            "testShell": ""
+        }
+    ],
+    "hints": [{
+        "text": "이미지명을 체크하세요",
+        "regExp": "ImageCrash..."   
+    }]
+}

@@ -1,0 +1,33 @@
+{
+    "labName": "[운영] 쿠버네티스 설계",
+    "tool" : "kuber-ez",
+    "labTime" : 10,
+    "labScenario" : "쿠버네티스 객체들을 이용하여 각 마이크로 서비스들의 디플로이 모델을 설정한다.",
+    "checkPoints": [
+        {
+            "text": "각 서비스별 (BC별) Deployment 를 작성",
+            "javascript": "containsAll(jp.query(result, '$.definition[?(@._type==\"Deployment\")].object.metadata.name'), ['order', 'store', 'customer'])"
+        },
+        {
+            "text": "각 Deployment 들로 Service 가 연결됨",
+            "javascript": "containsAll(jp.query(result, '$.definition[?(@._type==\"Service\")].outboundDeployment.object.metadata.name'), ['order', 'store', 'customer'])"
+        },
+        {
+            "text": "Ingress 를 이용하여 각 Service 들이 모두 연결됨",
+            "javascript": "containsAll(jp.query(result, '$.definition[?(@._type==\"Ingress\")].outboundServices[*].outboundDeployment.object.metadata.name'), ['order', 'store', 'customer'])"
+        },
+        {
+            "text": "모든 Deployment 의 container port 는 8080임",
+            "javascript": "containsAll(jp.query(result, '$.definition[?(@._type==\"Deployment\" && @.object.spec.template.spec.containers[0].ports[0].containerPort==\"8080\")].object.metadata.name'), ['order', 'store', 'customer'])"
+        },
+        {
+            "text": "모든 Service 의 target port 는 8080 이고 port 도 8080 임",
+            "javascript": "containsAll(jp.query(result, '$.definition[?(@._type==\"Service\" && @.object.spec.ports[0].port==\"8080\" && @.object.spec.ports[0].targetPort==\"8080\")].object.metadata.name'), ['order', 'store', 'customer'])"
+        }
+
+    ],
+    "hints": [{
+        "text": "",
+        "regExp": "port ..."
+    }]
+}
